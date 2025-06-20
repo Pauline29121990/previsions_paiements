@@ -100,7 +100,7 @@ if uploaded_file is not None:
     df = df.merge(df_cond[["CONDITION DE PAIEMENTS", "code_fournisseur", "GAMME"]], on="code_fournisseur", how="left")
 
 
-    df["montant"] = df["montant"].str.replace(',', '.', regex=False)
+    df["montant"] = df["montant"].astype(str).str.replace(',', '.', regex=False).astype(float)
     df["montant"] = pd.to_numeric(df["montant"], errors="coerce")
     
     df = df.dropna(subset=["CONDITION DE PAIEMENTS"])
