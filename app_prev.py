@@ -10,7 +10,7 @@ aujourd_hui_str = datetime.today().strftime("%d/%m/%Y") #définir la date du jou
 st.markdown(f"**Affichage des paiements à venir à partir du : {aujourd_hui_str}**")
 
 # === Demande chargement du fichier de commande frn === #
-uploaded_file = st.sidebar.file_uploader("📁 Importez un fichier CSV ou Excel", type=["csv", "xlsx"])
+uploaded_file = st.sidebar.file_uploader("📁 Veuillez charger les commandes fournisseurs : Odeis > Achat > Séléctionner Commande fournisseur > Enlever la date > Excel (tonneau)", type=["csv", "xlsx"])
 
 if uploaded_file is not None:
     # Lire le fichier selon son extension
